@@ -1,0 +1,30 @@
+<h1>Users</h1>
+
+<%= link_to 'Create User', new_user_path %>
+
+<table>
+	<tr>
+		<th>Email</th>
+		<th>Name</th>
+		<th>Status</th>
+		<th>Last Login</th>
+	</tr>
+	<% if @users.empty? %>
+		<tr>
+			<td colspan="5" style="text-style: italic">No users found</td>
+		</tr>
+	<% else %>
+		<% @users.each do |user| %>
+			<tr>
+				<td><%= user.email %></td>
+				<td><%= user.name %></td>
+				<td><%= Cheesy::StatusType.name_by_value(user.status) %></td>
+				<td><%= user.last_login || 'Never' %></td>
+			</tr>
+		<% end %>
+	<% end %>
+	<tr>
+		
+</table>
+
+<%= link_to 'Create User', new_user_path %>

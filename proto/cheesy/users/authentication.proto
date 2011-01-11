@@ -1,0 +1,14 @@
+// file: proto/cheesy/users/authentication.proto
+
+package cheesy.users;
+
+import "cheesy/users/user.proto";
+
+message AuthRequest {
+  required string email = 1;
+  required string hashed_password = 2;
+}
+
+service AuthService {
+  rpc Authenticate (AuthRequest) returns (User);
+}

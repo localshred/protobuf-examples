@@ -1,0 +1,695 @@
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (3.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (2.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateUsers (20110111073850)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "guid" varchar(255), "email" varchar(255), "name" varchar(255), "status" integer, "last_login" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110111073850')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 00:49:18 -0700
+
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.9ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateUsers (20110111073850)
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "guid" varchar(255), "email" varchar(255), "password" varchar(255), "name" varchar(255), "status" integer, "last_login" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110111073850')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 01:07:47 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (9.4ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 320ms (Views: 20.8ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 01:12:09 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 16ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:12:11 -0700
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/application (23.5ms)
+Completed   in 67ms
+
+ActionView::Template::Error (undefined method `to_i' for [:PENDING, #<Protobuf::EnumValue Cheesy::StatusType::PENDING=0>]:Array):
+    13: <div>
+    14: 	<select name="status">
+    15: 		<% Cheesy::StatusType.values.each do |status| %>
+    16: 			<option value="<%= status.to_i %>"><%= status.to_s %></option>
+    17: 		<% end %>
+    18: 	</select>
+    19: </div>
+  app/views/users/new.html.erb:16:in `block in _app_views_users_new_html_erb___4439064725618481719_2169453600_1174906307845048201'
+  app/views/users/new.html.erb:15:in `each'
+  app/views/users/new.html.erb:15:in `_app_views_users_new_html_erb___4439064725618481719_2169453600_1174906307845048201'
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:12:43 -0700
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 17ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:14:17 -0700
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 26ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 01:14:27 -0700
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 15ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:14:28 -0700
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 15ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:14:49 -0700
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 17ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:15:34 -0700
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 16ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user" for 127.0.0.1 at 2011-01-11 01:15:47 -0700
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:16:47 -0700
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 15ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-01-11 01:16:51 -0700
+  Processing by UsersController#create as HTML
+  Parameters: {"email"=>"bj.neilsen@gmail.com", "password"=>"[FILTERED]", "name"=>"BJ Neilsen", "status"=>"1"}
+Completed   in 0ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:17:21 -0700
+  Processing by UsersController#new as HTML
+ERROR: compiling _app_views_users_new_html_erb___4439064725618481719_2170159340_1174906307845048201 RAISED /code/src/urug/users/app/views/users/new.html.erb:27: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_users_new_html_erb___4439064725618481719_2170159340_1174906307845048201(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "users/new";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h2>Create User</h2>
+
+'); form_for @user 
+@output_buffer.safe_concat('	<div>Email <input name="email"></div>
+
+	<div>Password <input name="password" type="password"></div>
+
+	<div>Name <input name="name"></div>
+
+	<div>
+		Status
+		<select name="status">
+');@output_buffer.append_if_string= 			 Cheesy::StatusType.values.each_pair do |name, status| 
+@output_buffer.safe_concat('				<option value="');@output_buffer.append= ( status.to_i );@output_buffer.safe_concat('">');@output_buffer.append= ( name.to_s );@output_buffer.safe_concat('</option>
+');			 end 
+@output_buffer.safe_concat('		</select>
+	</div>
+
+	<hr>
+
+	<div>
+		<input type="submit" value="Create">
+		or <a href="/users">Cancel</a>
+	</div>
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/template.rb:255:in `module_eval'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/template.rb:255:in `compile'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/template.rb:134:in `block in render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications.rb:54:in `instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/template.rb:127:in `render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:26:in `render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:92:in `render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/bj/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activerecord-3.0.1/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:435:in `_run__1063722161839953575__process_action__1103361169466211295__callbacks'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/base.rb:119:in `process'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:40:in `process'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal.rb:133:in `dispatch'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal.rb:173:in `block in action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activerecord-3.0.1/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:12:in `cache'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:31:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activerecord-3.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/railties-3.0.1/lib/rails/rack/logger.rb:13:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/railties-3.0.1/lib/rails/application.rb:168:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/railties-3.0.1/lib/rails/application.rb:77:in `method_missing'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/railties-3.0.1/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/Users/bj/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/bj/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/bj/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered users/new.html.erb within layouts/application (4.2ms)
+Completed   in 34ms
+
+ActionView::Template::Error (/code/src/urug/users/app/views/users/new.html.erb:27: syntax error, unexpected keyword_ensure, expecting $end):
+    24: 	</div>
+    25: <% end %>
+  
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.4ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.6ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (26.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:17:35 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2168566760_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+Rendered users/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 25ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:18:15 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2170521360_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+Rendered users/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 23ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:18:55 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2168887820_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+Rendered users/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 25ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:19:16 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2170807580_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+Rendered users/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 55ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:19:56 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2169243140_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+Rendered users/new.html.erb within layouts/application (66.4ms)
+Completed 200 OK in 81ms (Views: 70.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-01-11 01:20:09 -0700
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y55R/BFYAzbJ4SJNiA0VA6J0TIQDLx8hPv5o46s7jS8=", "user"=>{"email"=>"bj.neilsen@gmail.com", "password"=>"[FILTERED]", "name"=>"BJ Neilsen", "status"=>"1"}, "commit"=>"Create User"}
+Redirected to 
+Completed   in 50ms
+
+NoMethodError (undefined method `new_url' for #<UsersController:0x00000100f28220>):
+  app/controllers/users_controller.rb:17:in `rescue in create'
+  app/controllers/users_controller.rb:11:in `create'
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-01-11 01:20:39 -0700
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y55R/BFYAzbJ4SJNiA0VA6J0TIQDLx8hPv5o46s7jS8=", "user"=>{"email"=>"bj.neilsen@gmail.com", "password"=>"[FILTERED]", "name"=>"BJ Neilsen", "status"=>"1"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 17ms
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:20:39 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2154234060_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+Rendered users/new.html.erb within layouts/application (47.5ms)
+Completed 200 OK in 63ms (Views: 51.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 01:20:42 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 16ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:20:43 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2168765520_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+Rendered users/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 28ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-01-11 01:20:50 -0700
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y55R/BFYAzbJ4SJNiA0VA6J0TIQDLx8hPv5o46s7jS8=", "user"=>{"email"=>"bj.neilsen@gmail.com", "password"=>"[FILTERED]", "name"=>"BJ Neilsen", "status"=>"1"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 48ms
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:20:50 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2169319320_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+Rendered users/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 28ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:21:11 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2154298540_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+Rendered users/new.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 66ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:22:47 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2169608280_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+ERROR: compiling _app_views_layouts_application_html_erb___686912561581782123_2169598720_1174906307845048201 RAISED /code/src/urug/users/app/views/layouts/application.html.erb:11: dynamic constant assignment
+'); FLASH_NAMES = [:notice, :error] 
+                 ^
+Function body:           def _app_views_layouts_application_html_erb___686912561581782123_2169598720_1174906307845048201(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+<head>
+  <title>Users</title>
+  ');@output_buffer.append= ( stylesheet_link_tag :all );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag :defaults );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( csrf_meta_tag );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</head>
+<body>
+
+'); FLASH_NAMES = [:notice, :error] 
+@output_buffer.safe_concat('
+'); for name in FLASH_NAMES 
+   if flash[name] 
+@output_buffer.safe_concat('    ');@output_buffer.append= ( "<div id=\"#{name}\">#{flash[name]}</div>" );@output_buffer.safe_concat('
+');   end 
+ end 
+@output_buffer.safe_concat('
+');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+</body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/template.rb:255:in `module_eval'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/template.rb:255:in `compile'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/template.rb:134:in `block in render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications.rb:54:in `instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/template.rb:127:in `render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:26:in `render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:92:in `render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/bj/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activerecord-3.0.1/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:435:in `_run__1063722161839953575__process_action__1103361169466211295__callbacks'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/base.rb:119:in `process'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:40:in `process'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal.rb:133:in `dispatch'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_controller/metal.rb:173:in `block in action'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activerecord-3.0.1/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:12:in `cache'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:31:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activerecord-3.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/railties-3.0.1/lib/rails/rack/logger.rb:13:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/activesupport-3.0.1/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/railties-3.0.1/lib/rails/application.rb:168:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/railties-3.0.1/lib/rails/application.rb:77:in `method_missing'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/railties-3.0.1/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/Users/bj/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/bj/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/bj/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered users/new.html.erb within layouts/application (9.0ms)
+Completed   in 23ms
+
+ActionView::Template::Error (/code/src/urug/users/app/views/layouts/application.html.erb:11: dynamic constant assignment
+'); FLASH_NAMES = [:notice, :error] 
+                 ^):
+    8: </head>
+    9: <body>
+    10: 
+    11: <% FLASH_NAMES = [:notice, :error] %>
+    12: 
+    13: <% for name in FLASH_NAMES %>
+    14:   <% if flash[name] %>
+  
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:23:09 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2152464880_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+Rendered users/new.html.erb within layouts/application (39.7ms)
+Completed 200 OK in 55ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-01-11 01:23:15 -0700
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y55R/BFYAzbJ4SJNiA0VA6J0TIQDLx8hPv5o46s7jS8=", "user"=>{"email"=>"bj.neilsen@gmail.com", "password"=>"[FILTERED]", "name"=>"BJ Neilsen", "status"=>"1"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 18ms
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:23:15 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2155093080_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+Rendered users/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 27ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-11 01:23:47 -0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___4439064725618481719_2169916680_1174906307845048201 at /code/src/urug/users/app/views/users/new.html.erb:3)
+Rendered users/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 23ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-01-11 01:23:52 -0700
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y55R/BFYAzbJ4SJNiA0VA6J0TIQDLx8hPv5o46s7jS8=", "user"=>{"email"=>"bj.neilsen@gmail.com", "password"=>"[FILTERED]", "name"=>"BJ Neilsen", "status"=>"1"}, "commit"=>"Create User"}
+  [1m[35mSQL (18.5ms)[0m  INSERT INTO "users" ("created_at", "email", "guid", "last_login", "name", "password", "status", "updated_at") VALUES ('2011-01-11 08:23:52.572123', 'bj.neilsen@gmail.com', '525e9b42-26c7-7fab-f8fc-249f4c471a2a', NULL, 'BJ Neilsen', 'pass', 1, '2011-01-11 08:23:52.572123')
+Redirected to http://localhost:3000/users
+Completed 302 Found in 231ms
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 01:23:52 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 29ms (Views: 19.7ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 01:24:31 -0700
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 26ms (Views: 16.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 01:24:53 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 26ms (Views: 16.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 01:24:59 -0700
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 26ms (Views: 16.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 01:25:28 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 26ms (Views: 16.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 01:32:39 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 210ms (Views: 17.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 01:32:43 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 26ms (Views: 16.4ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (10.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = '') AND ("users"."password" = '') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = '') AND ("users"."password" = '') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = '') AND ("users"."password" = '') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = '') AND ("users"."password" = '') LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = '') AND ("users"."password" = '') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = '') AND ("users"."password" = '') LIMIT 1[0m
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = '') AND ("users"."password" = '') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = '') AND ("users"."password" = '') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'bj.neilsen@gmail.com') AND ("users"."password" = '') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'bj.neilsen@gmail.com') AND ("users"."password" = 'pass') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "last_login" = '2011-01-11 09:10:13.275741', "updated_at" = '2011-01-11 09:10:13.283652' WHERE ("users"."id" = 1)[0m
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:23:00 -0700
+
+ActionController::RoutingError (No route matches "/sessions/new"):
+  
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 02:23:02 -0700
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-11 02:23:06 -0700
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 72ms (Views: 54.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 02:23:42 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 34ms (Views: 17.7ms | ActiveRecord: 0.5ms)

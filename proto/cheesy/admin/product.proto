@@ -1,0 +1,33 @@
+// file: proto/cheesy/admin/product.proto
+
+package cheesy.admin;
+
+enum ProductType {
+  CHEDDAR = 0;
+  JACK = 1;
+  GOUDA = 2;
+  MOZARELLA = 3;
+  // ....
+}
+
+message Product {
+  required string guid = 1;
+  required string sku = 2;
+  required double cost = 3;
+  required float markup = 4 [default=0.25];
+  required double retail_price = 5;
+  required ProductType type = 6;
+  optional bool in_stock = 7 [default=true];
+}
+
+message ProductList {
+  repeated Product products = 1;
+}
+
+message ProductFindRequest {
+  required ProductType type = 1;
+}
+
+service ProductService {
+  rpc Find (ProductFindRequest) returns (ProductList);
+}

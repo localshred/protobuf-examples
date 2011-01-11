@@ -1,0 +1,20 @@
+GIT
+  remote: git://github.com/localshred/ruby-protobuf.git
+  revision: 40dd8e99c9fc3820714ad6273eb821182e540233
+  branch: compatibility-0.4.0
+  specs:
+    ruby_protobuf (0.4.0.7)
+      eventmachine (~> 0.12.10)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    eventmachine (0.12.10)
+    thor (0.14.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ruby_protobuf!
+  thor

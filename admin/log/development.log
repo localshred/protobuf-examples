@@ -1,0 +1,519 @@
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 01:46:50 -0700
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 01:48:00 -0700
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (43.3ms)
+Completed   in 47ms
+
+ActionView::Template::Error (undefined method `login_path' for #<#<Class:0x0000010171ce40>:0x00000101718f98>):
+    1: <h2>Product Admin Login</h2>
+    2: 
+    3: <% form_tag :login do |f| %>
+    4: 	<div>Email <%= f.text_field :email %></div>
+    5: 
+    6: 	<div>Password <%= f.password_field :password %></div>
+  app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb__2717556219179273526_2159588520_1071239475902114971'
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 01:48:13 -0700
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed   in 6ms
+
+ActionView::Template::Error (undefined method `text_field' for nil:NilClass):
+    1: <h2>Product Admin Login</h2>
+    2: 
+    3: <% form_tag :sessions do |f| %>
+    4: 	<div>Email <%= f.text_field :email %></div>
+    5: 
+    6: 	<div>Password <%= f.password_field :password %></div>
+    7: 
+  app/views/sessions/new.html.erb:4:in `block in _app_views_sessions_new_html_erb__2717556219179273526_2153617620_1071239475902114971'
+  app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb__2717556219179273526_2153617620_1071239475902114971'
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 01:49:03 -0700
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (8.2ms)
+Completed   in 12ms
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x000001017311d8>:0x0000010172d718>):
+    8: 	<hr>
+    9: 
+    10: 	<div>
+    11: 		<%= f.submit 'Login' %>
+    12: 	</div>
+    13: <% end %>
+  app/views/sessions/new.html.erb:11:in `block in _app_views_sessions_new_html_erb__2717556219179273526_2159626400_1071239475902114971'
+  app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb__2717556219179273526_2159626400_1071239475902114971'
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 01:49:11 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2156172640_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 01:50:10 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"bj.neilsen@gmai.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed   in 30003ms
+
+RuntimeError (Client timeout of 30 seconds expired):
+  app/controllers/sessions_controller.rb:15:in `create'
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 01:52:01 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"bj.neilsen@gmai.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed   in 2004ms
+
+NameError (undefined local variable or method `new_session_path' for #<SessionsController:0x000001016a2a50>):
+  app/controllers/sessions_controller.rb:34:in `create'
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 01:52:23 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"bj.neilsen@gmai.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 2003ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 01:52:25 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2172976220_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 01:52:43 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"bj.neilsen@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 2003ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 01:52:45 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2158906940_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 01:55:00 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"bj.neilsen@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 501ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 01:55:01 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2173008260_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 01:57:20 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 2003ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 01:57:22 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2158944900_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2011-01-11 01:57:33 -0700
+  Processing by ProductsController#index as HTML
+Rendered products/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 01:57:45 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2173017760_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 01:58:31 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 502ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 01:58:32 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2159007600_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 01:59:16 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 502ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 01:59:17 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2172929380_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 01:59:58 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 503ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 01:59:59 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2159060340_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:01:05 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 506ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:01:06 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2151920280_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (76.5ms)
+Completed 200 OK in 84ms (Views: 83.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:01:41 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 502ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:01:41 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2159067020_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:03:15 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 502ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:03:16 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2152634600_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 63ms (Views: 62.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:03:54 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 502ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:03:54 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2159173100_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:04:20 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 1002ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:04:21 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2152892540_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:06:28 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 1002ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:06:29 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2159306400_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:07:28 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 1002ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:07:29 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2153095220_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:07:52 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 503ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:07:53 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2159454700_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:08:00 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2158618220_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:08:01 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 502ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:08:02 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2172885680_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:08:22 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 502ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:08:22 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2158734640_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:09:02 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 1002ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:09:03 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2172934020_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:09:45 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 1002ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:09:46 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2158836340_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:10:05 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"bj.neilsen@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 502ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:10:05 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__2717556219179273526_2172971720_1071239475902114971 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:10:13 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"bj.neilsen@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/products
+Completed 302 Found in 502ms
+
+
+Started GET "/products" for 127.0.0.1 at 2011-01-11 02:10:13 -0700
+  Processing by ProductsController#index as HTML
+Rendered products/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2011-01-11 02:17:43 -0700
+  Processing by ProductsController#index as HTML
+Rendered products/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2011-01-11 02:17:57 -0700
+  Processing by ProductsController#index as HTML
+Rendered products/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2011-01-11 02:18:28 -0700
+  Processing by ProductsController#index as HTML
+Rendered products/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2011-01-11 02:18:36 -0700
+  Processing by ProductsController#index as HTML
+Rendered products/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:18:38 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__497993522270302325_2154138000_1768120278620679705 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:18:40 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed   in 2002ms
+
+NoMethodError (undefined method `message' for "Client timeout of 2 seconds expired":String):
+  app/controllers/sessions_controller.rb:33:in `create'
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:20:27 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed   in 2012ms
+
+NameError (uninitialized constant Protobuf::Socketrpc::ClientError):
+  app/controllers/sessions_controller.rb:26:in `rescue in create'
+  app/controllers/sessions_controller.rb:16:in `create'
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.8ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:20:39 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed   in 2013ms
+
+NameError (uninitialized constant Protobuf::Socketrpc::ClientError):
+  app/controllers/sessions_controller.rb:27:in `rescue in create'
+  app/controllers/sessions_controller.rb:17:in `create'
+
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/bj/.rvm/gems/ruby-1.9.2-p0@urug/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:21:09 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 2002ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:21:11 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__497993522270302325_2156463820_1768120278620679705 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:22:02 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__497993522270302325_2170125940_1768120278620679705 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-01-11 02:22:03 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HJn+gp657OOx6rH6dw0E/kVYsxvEzf4lPEG2U9KO+A=", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://localhost:3001/sessions/new
+Completed 302 Found in 2003ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2011-01-11 02:22:05 -0700
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb__497993522270302325_2157296040_1768120278620679705 at /code/src/urug/admin/app/views/sessions/new.html.erb:3)
+Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)

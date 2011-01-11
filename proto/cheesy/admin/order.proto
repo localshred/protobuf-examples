@@ -1,0 +1,32 @@
+// file: proto/cheesy/admin/order.proto
+
+package cheesy.admin;
+
+import "cheesy/admin/product.proto";
+import "cheesy/util.proto";
+
+enum PaymentStatus {
+  PENDING = 0;
+  PROCESSING = 1;
+  APPROVED = 2;
+  DENIED = 3;
+  RETURNED = 4;
+}
+
+message LineItem {
+  required Product product = 1;
+  required int32 quantity = 2;
+  required double amount = 3;
+}
+
+message Order {
+  optional string guid = 1;
+  optional string order_number = 2;
+  repeated LineItem line_items = 3;
+  required double total = 4;
+  optional PaymentStatus payment_status = 5 [default=PENDING];
+}
+
+service OrderService {
+  rpc Purchase (Order) returns (Order);
+}

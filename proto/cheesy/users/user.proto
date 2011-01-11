@@ -1,0 +1,28 @@
+// File: proto/cheesy/users/user.proto
+
+package cheesy.users;
+
+import "cheesy/util.proto";
+
+message User {
+  required string guid = 1;
+  required string email = 2;
+  optional string name = 3;
+  optional StatusType status = 4 [default=PENDING];
+}
+
+message UserList {
+  repeated User users = 1;
+}
+
+message UserFindRequest {
+  optional string name = 1;
+  optional string email = 2;
+}
+
+service UserService {
+  rpc Find (UserFindRequest) returns (UserList);
+  rpc Create (User) returns (User);
+  rpc Update (User) returns (User);
+  rpc Delete (User) returns (User);
+}

@@ -1,0 +1,10 @@
+// File: proto/cheesy/util.proto
+
+package cheesy;
+
+enum StatusType {
+  PENDING = 0;
+  ENABLED = 1;
+  DISABLED = 2;
+  DELETED = 3;
+}

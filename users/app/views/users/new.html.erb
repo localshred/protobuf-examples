@@ -1,0 +1,25 @@
+<h2>Create User</h2>
+
+<% form_for @user do |f| %>
+	<div>Email <%= f.text_field :email %></div>
+
+	<div>Password <%= f.password_field :password %></div>
+
+	<div>Name <%= f.text_field :name %></div>
+
+	<div>
+		Status
+		<select name="user[status]">
+			<% Cheesy::StatusType.values.each_pair do |name, status| %>
+				<option value="<%= status.to_i %>"><%= name.to_s %></option>
+			<% end %>
+		</select>
+	</div>
+
+	<hr>
+
+	<div>
+		<%= f.submit %>
+		or <a href="/users">Cancel</a>
+	</div>
+<% end %>

@@ -1,0 +1,8 @@
+source 'http://rubygems.org'
+
+gem 'rails'
+gem 'pg'
+gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'unicorn'
+gem 'ruby_protobuf', :git => 'git://github.com/localshred/ruby-protobuf.git', :branch => 'compatibility-0.4.0'
+gem 'guid'
